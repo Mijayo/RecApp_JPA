@@ -35,6 +35,17 @@ public class Auxiliar implements Serializable {
 
 	public Auxiliar() {
 	}
+	
+	
+	public Auxiliar(int idAux, Anuncio anuncio, Profesione profesion, Eneagrama eneagrama) {
+		super();
+		this.idAux = idAux;
+		this.anuncio = anuncio;
+		this.profesion = profesion;
+		this.eneagrama = eneagrama;
+	}
+
+
 
 	public int getIdAux() {
 		return this.idAux;
@@ -68,4 +79,13 @@ public class Auxiliar implements Serializable {
 		this.eneagrama = eneagrama;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Auxiliar [idAux=" + idAux + ", anuncio=" + anuncio + ", profesion=" + profesion + ", eneagrama="
+				+ eneagrama + "]";
+	}
+
+	
+	
 }

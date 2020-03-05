@@ -75,9 +75,10 @@
 								class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
 								<!-- <li><a href="#" class="nav-link">Regístrate</a></li> -->
 								<li><a href="#"
-									onclick="document.getElementById('id01').style.display='block'" class="registrarse">registrate</a></li>
-								<li><a href="/contacto" class="nav-link">contacto</a></li>
-								<li><a href="/nosotros" class="nav-link">nosotros</a></li>
+									onclick="document.getElementById('id01').style.display='block'"
+									class="registrarse">registrate</a></li>
+								<li><a href="" class="nav-link">contacto</a></li>
+								<li><a href="" class="nav-link">nosotros</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -86,27 +87,20 @@
 						<span
 							onclick="document.getElementById('id01').style.display='none'"
 							class="close" title="Close Modal"></span>
-						<form class="modal-content" action="/action_page.php">
+						
+						<form class="modal-content" action="Login?option=registrar" method="POST">
 							<div class="container">
-								<h1>Registrarse</h1>
 								<p>Rellena los campos</p>
-					
+
 								<label for="email"><b>Email</b></label> <input type="text"
 									placeholder="email" name="email" required> <label
 									for="psw"><b>Password</b></label> <input type="password"
 									placeholder="password" name="pwd" required> <label
-									for="psw-repeat"><b>Nombre</b></label> <input type="password"
+									for="psw-repeat"><b>Nombre</b></label> <input type="text"
 									placeholder="nombre" name="nombre" required>
 
-								<p>
-									<a href="#" style="color: dodgerblue">Terminos & Privacidad</a>.
-								</p>
-
 								<div class="clearfix">
-									<button type="button"
-										onclick="document.getElementById('id01').style.display='none'"
-										class="cancelbtn">Cancel</button>
-									<button type="submit" class="signupbtn">Sign Up</button>
+									<button type="submit" class="signupbtn">registrate</button>
 								</div>
 							</div>
 						</form>
@@ -158,7 +152,8 @@
 									y accede a nuestro test de personalidad.</p>
 								<p data-aos="fade-right" data-aos-delay="200"
 									data-aos-offset="-500">
-									<a href="/login" class="btn btn-outline-white">regístrate</a>
+									<a href="#" onclick="document.getElementById('id01').style.display='block'"
+									class="registrarse" class="btn btn-outline-white">regístrate</a>
 								</p>
 							</div>
 							<div class="col-lg-5 iphone-wrap">

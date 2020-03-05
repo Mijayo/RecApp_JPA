@@ -21,6 +21,13 @@ public class Profesione implements Serializable {
 	public Profesione() {
 	}
 
+
+	public Profesione(int idProfesion) {
+		super();
+		this.idProfesion = idProfesion;
+	}
+
+
 	public int getIdProfesion() {
 		return this.idProfesion;
 	}
@@ -29,4 +36,36 @@ public class Profesione implements Serializable {
 		this.idProfesion = idProfesion;
 	}
 
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idProfesion;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Profesione other = (Profesione) obj;
+		if (idProfesion != other.idProfesion)
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Profesione [idProfesion=" + idProfesion + "]";
+	}
+
+	
+	
 }
