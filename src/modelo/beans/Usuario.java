@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
 	private String password;
 
 	//uni-directional many-to-one association to Eneagrama
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.PERSIST})
 	@JoinColumn(name="TIPO_ENEAGRAMA")
 	private Eneagrama eneagrama;
 
@@ -103,6 +103,14 @@ public class Usuario implements Serializable {
 
 
 	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", email=" + email + ", fechaAlta=" + fechaAlta + ", nombre="
+				+ nombre + ", password=" + password + ", eneagrama=" + eneagrama + "]";
+	}
+
+
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -155,15 +163,6 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-
-
-
-	@Override
-	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", email=" + email + ", fechaAlta=" + fechaAlta + ", nombre="
-				+ nombre + ", password=" + password + ", eneagrama=" + eneagrama + "]";
-	}
-	
 	
 	
 

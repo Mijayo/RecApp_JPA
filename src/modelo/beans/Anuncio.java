@@ -34,6 +34,7 @@ public class Anuncio implements Serializable {
 	}
 	
 	
+
 	public Anuncio(String keyword, String cargo, String detalle, String requerimientos, String salario,
 			String tipoJornada, String ubicacion) {
 		super();
@@ -104,6 +105,17 @@ public class Anuncio implements Serializable {
 		this.ubicacion = ubicacion;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Anuncio [keyword=" + keyword + ", cargo=" + cargo + ", detalle=" + detalle + ", requerimientos="
+				+ requerimientos + ", salario=" + salario + ", tipoJornada=" + tipoJornada + ", ubicacion=" + ubicacion
+				+ "]";
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -117,6 +129,8 @@ public class Anuncio implements Serializable {
 		result = prime * result + ((ubicacion == null) ? 0 : ubicacion.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -164,15 +178,7 @@ public class Anuncio implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
 
-	@Override
-	public String toString() {
-		return "Anuncio [keyword=" + keyword + ", cargo=" + cargo + ", detalle=" + detalle + ", requerimientos="
-				+ requerimientos + ", salario=" + salario + ", tipoJornada=" + tipoJornada + ", ubicacion=" + ubicacion
-				+ "]";
-	}
-
-	
-	
-	
 }

@@ -20,12 +20,14 @@ public class Profesione implements Serializable {
 
 	public Profesione() {
 	}
-
+	
+	
 
 	public Profesione(int idProfesion) {
 		super();
 		this.idProfesion = idProfesion;
 	}
+
 
 
 	public int getIdProfesion() {
@@ -37,6 +39,14 @@ public class Profesione implements Serializable {
 	}
 
 
+
+	@Override
+	public String toString() {
+		return "Profesione [idProfesion=" + idProfesion + "]";
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,6 +54,7 @@ public class Profesione implements Serializable {
 		result = prime * result + idProfesion;
 		return result;
 	}
+
 
 
 	@Override
@@ -58,12 +69,6 @@ public class Profesione implements Serializable {
 		if (idProfesion != other.idProfesion)
 			return false;
 		return true;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Profesione [idProfesion=" + idProfesion + "]";
 	}
 
 	

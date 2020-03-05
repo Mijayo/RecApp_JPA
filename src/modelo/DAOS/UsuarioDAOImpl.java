@@ -27,14 +27,29 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	@Override
 	public int insert(Usuario usuario) {
 
+		System.out.println(usuario);
+
 		Usuario usu = null;
 
 		try {
+
 			usu = em.find(Usuario.class, usuario.getIdUsuario());
+
+			System.out.println(usu);
+
 			if (usu != null) {
+
 				tx.begin();
 				em.persist(usuario);
 				tx.commit();
+
+				return 1;
+			} else if (usu == null) {
+				
+				tx.begin();
+				em.persist(usuario);
+				tx.commit();
+				
 				return 1;
 			}
 

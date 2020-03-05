@@ -23,26 +23,27 @@ public class Auxiliar implements Serializable {
 	@JoinColumn(name="KEY_AUX")
 	private Anuncio anuncio;
 
-	//uni-directional many-to-one association to Profesione
-	@ManyToOne
-	@JoinColumn(name="ID_PROF_AUX")
-	private Profesione profesion;
-
 	//uni-directional many-to-one association to Eneagrama
 	@ManyToOne
 	@JoinColumn(name="ID_ENE_AUX")
 	private Eneagrama eneagrama;
 
+	//uni-directional many-to-one association to Profesione
+	@ManyToOne
+	@JoinColumn(name="ID_PROF_AUX")
+	private Profesione profesion;
+
 	public Auxiliar() {
 	}
 	
 	
-	public Auxiliar(int idAux, Anuncio anuncio, Profesione profesion, Eneagrama eneagrama) {
+
+	public Auxiliar(int idAux, Anuncio anuncio, Eneagrama eneagrama, Profesione profesion) {
 		super();
 		this.idAux = idAux;
 		this.anuncio = anuncio;
-		this.profesion = profesion;
 		this.eneagrama = eneagrama;
+		this.profesion = profesion;
 	}
 
 
@@ -63,14 +64,6 @@ public class Auxiliar implements Serializable {
 		this.anuncio = anuncio;
 	}
 
-	public Profesione getProfesion() {
-		return this.profesion;
-	}
-
-	public void setProfesion(Profesione profesion) {
-		this.profesion = profesion;
-	}
-
 	public Eneagrama getEneagrama() {
 		return this.eneagrama;
 	}
@@ -79,13 +72,66 @@ public class Auxiliar implements Serializable {
 		this.eneagrama = eneagrama;
 	}
 
+	public Profesione getProfesion() {
+		return this.profesion;
+	}
+
+	public void setProfesion(Profesione profesion) {
+		this.profesion = profesion;
+	}
+
+
 
 	@Override
 	public String toString() {
-		return "Auxiliar [idAux=" + idAux + ", anuncio=" + anuncio + ", profesion=" + profesion + ", eneagrama="
-				+ eneagrama + "]";
+		return "Auxiliar [idAux=" + idAux + ", anuncio=" + anuncio + ", eneagrama=" + eneagrama + ", profesion="
+				+ profesion + "]";
 	}
 
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((anuncio == null) ? 0 : anuncio.hashCode());
+		result = prime * result + ((eneagrama == null) ? 0 : eneagrama.hashCode());
+		result = prime * result + idAux;
+		result = prime * result + ((profesion == null) ? 0 : profesion.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Auxiliar other = (Auxiliar) obj;
+		if (anuncio == null) {
+			if (other.anuncio != null)
+				return false;
+		} else if (!anuncio.equals(other.anuncio))
+			return false;
+		if (eneagrama == null) {
+			if (other.eneagrama != null)
+				return false;
+		} else if (!eneagrama.equals(other.eneagrama))
+			return false;
+		if (idAux != other.idAux)
+			return false;
+		if (profesion == null) {
+			if (other.profesion != null)
+				return false;
+		} else if (!profesion.equals(other.profesion))
+			return false;
+		return true;
+	}
 	
 	
+
 }

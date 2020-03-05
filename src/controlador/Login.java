@@ -52,38 +52,38 @@ public class Login extends HttpServlet {
 
 		switch (request.getParameter("option")) {
 
-		case "validar":
-
-			usu = udao.findLogin(request.getParameter("email"), request.getParameter("pwd"));
-
-			request.getSession().setAttribute("usuario", usu);
-
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-
-			break;
-
-		case "registrar":
-
-			System.out.println(request.getParameter("email"));
-			System.out.println(request.getParameter("nombre"));
-			System.out.println(request.getParameter("pwd"));
-
-			int autoIncrement = 0;
-
-			usu = new Usuario(autoIncrement, request.getParameter("email"), new Date(), request.getParameter("nombre"),
-					request.getParameter("pwd"), ene);
-
-			if (udao.insert(usu) != 0) {
-
+			case "validar":
+	
+				usu = udao.findLogin(request.getParameter("email"), request.getParameter("pwd"));
+	
 				request.getSession().setAttribute("usuario", usu);
+	
 				request.getRequestDispatcher("index.jsp").forward(request, response);
-
-			} else {
-				request.setAttribute("mensaje_error", "ya existe ese usuario");
-				request.getRequestDispatcher("index.jsp").forward(request, response);
-			}
-
-			break;
+	
+				break;
+	
+			case "registrar":
+	
+				System.out.println(request.getParameter("email"));
+				System.out.println(request.getParameter("nombre"));
+				System.out.println(request.getParameter("pwd"));
+	
+				int autoIncrement = 0;
+	
+				usu = new Usuario(autoIncrement, request.getParameter("email"), new Date(), request.getParameter("nombre"),
+						request.getParameter("pwd"), ene);
+	
+				if (udao.insert(usu) != 0) {
+	
+					request.getSession().setAttribute("usuario", usu);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+	
+				} else {
+					request.setAttribute("mensaje_error", "ya existe ese usuario");
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+				}
+	
+				break;
 
 		}
 
