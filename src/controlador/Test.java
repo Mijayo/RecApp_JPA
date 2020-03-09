@@ -56,7 +56,7 @@ public class Test extends HttpServlet {
 		//Inicializamos las preguntas
 
 			PreguntaDAOImpl pdao = new PreguntaDAOImpl();
-			Pregunta pregunta;
+//			Pregunta pregunta;
 
 			pdao.findByEneagrama(id);
 			System.out.println(id);
