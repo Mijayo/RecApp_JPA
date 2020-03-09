@@ -4,7 +4,8 @@
 		<class>modelo.beans.Anuncio</class>
 		<class>modelo.beans.Auxiliar</class>
 		<class>modelo.beans.Eneagrama</class>
-		<class>modelo.beans.Profesione</class>
+		<class>modelo.beans.Pregunta</class>
+		<class>modelo.beans.Profesion</class>
 		<class>modelo.beans.Usuario</class>
 	</persistence-unit>
 </persistence>
