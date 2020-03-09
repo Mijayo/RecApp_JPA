@@ -41,21 +41,15 @@
 <link href="style.css" rel="stylesheet">
 
 </head>
-
-
-	<form action="Login?validar=eneagrama" method="POST">
-	<div class="lista"><br>
-		
-		<label>Numero de Cuenta Usuario</label><br>
-		<input type="number" id="numCuenta" name="eneag" placeholder="Numero de cuenta"/>
-		</div>
-		<input type="submit" value="Enviar Datos" class="button"/>
-	</form>
+<c:forEach items="${requestScope.lista}" var="lista2">
+		<div class="lista">
+		<tr>
+		</tr>
+	</div>
+	</c:forEach>
 	
-	<%if(request.getAttribute("estado") != null){ %>
-		<p><%=request.getAttribute("estado")%></p>
-	<%}%>
-
+	<a href="Test?validar=aumentar"><div class=button>Aumentar</div></a>
+	
 
 <body>
 

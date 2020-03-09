@@ -61,6 +61,9 @@ public class Test extends HttpServlet {
 			pdao.findByEneagrama(id);
 			System.out.println(id);
 			
+			request.setAttribute("lista",pdao.findByEneagrama(id));
+			request.getRequestDispatcher("Test.jsp").forward(request, response);
+			
 			
 		break;
 		case "aumentar":
@@ -69,7 +72,7 @@ public class Test extends HttpServlet {
 			
 			total[idArray] = idArray;
 			id++;
-			
+			System.out.println(id + "it sort of works!");
 	}}
 
 }
